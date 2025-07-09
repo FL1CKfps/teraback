@@ -24,9 +24,9 @@ except ImportError:
                 USING_PACKAGE = False
 
 application = Flask(__name__)
-CORS(app)
+CORS(application)
 
-@app.route('/api/debug', methods=['GET'])
+@application.route('/api/debug', methods=['GET'])
 def debug():
     import sys
     import pkg_resources
@@ -45,7 +45,7 @@ def debug():
         'sys_path': sys.path[:3]  # First 3 paths only
     })
 
-@app.route('/api/get-direct-link', methods=['POST'])
+@application.route('/api/get-direct-link', methods=['POST'])
 def get_direct_link():
     data = request.get_json()
     share_url = data.get('share_url')
