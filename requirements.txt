@@ -1,0 +1,9 @@
+flask
+terabox-downloader>=1.0.0
+flask-cors
+requests
+cloudscraper
+beautifulsoup4
+selenium
+lxml
+gunicorn
